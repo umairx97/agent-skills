@@ -1,36 +1,42 @@
 ---
 name: estimator
-description: Estimate software development effort, delivery time, and cost for freelancers and agencies. Use when turning a software brief, feature request, or project scope into a client estimate or revising it after a scope change.
+description: Estimate software development effort, delivery time, and cost for freelancers and agencies. Use for a new build, a change to existing software, or a revision to a client estimate.
 ---
 
 # Estimator
 
-## Establish scope
+An estimate ties a defined release to three quantities. **Effort** is labor hours. **Delivery** is elapsed time given staffing and dependencies. **Cost** uses the supplied rates and currency. Give each quantity only to the extent the inputs support it.
 
-Read the brief and any available code, designs, or integration documentation that could change the estimate. Identify deliverables, acceptance criteria, existing work that can be reused, and inputs the client needs to provide.
+## 1. Establish the release
 
-Ask focused questions about unknowns that could materially change feasibility, effort, or the delivery date. If the known scope is enough for a preliminary estimate, provide it alongside the questions and state the assumptions. Isolate an unresolved dependency as conditional work or estimate a discovery task to resolve it. Keep it outside the total if its effort cannot be bounded.
+Read the brief and inspect available code, designs, or integration docs when they can resolve a material question. For existing software, trace the affected workflow from entry point to stored data and verify which pieces can be reused. For a new build, define the smallest release that satisfies the requested outcome.
 
-## Estimate effort
+State who can do what at handoff, how the client can verify it, and what is excluded. Ask the question that would move the estimate most. Give a recommended assumption and say what changes if it is wrong. Ask dependent questions after their prerequisites are settled.
 
-- Break the scope into work packages with a clear outcome for each. Include discovery, design, implementation, testing, deployment, and handoff when required by the scope.
-- Estimate low and high labor hours per package and role. Use comparable completed work when available and explain what makes the current work smaller, larger, or more uncertain. Name the assumptions that drive the difference between the endpoints.
-- Sum the low and high hours separately. Allow for identified risks in the affected package ranges or in an explicit contingency line. Account for each risk once.
+Proceed when each material unknown is verified, stated as a bounded assumption, or separated from the estimate. If an unknown could make the release infeasible or its effort unbounded, propose a timeboxed discovery task with a specific question to answer and an artifact to hand back. Estimate any independent work the client can still plan.
 
-## Estimate delivery
+## 2. Size work people can verify
 
-- Map work packages to the people or roles doing the work and the effective hours they can spend on it per day or week. Use shared capacity when one person fills several roles.
-- Sequence dependent tasks, overlap independent tasks where capacity allows, and include review, approval, and other wait times. Include active review effort in hours and passive wait time in the schedule.
-- Derive the low and high delivery windows from the resulting schedules. State the start assumption and any conditions tied to dates. If team capacity is unknown, provide the effort range and ask for availability before giving a delivery window.
+Group work around observable outcomes. Add shared work once where it belongs. Check whether access, permissions, data migration, operational failures, QA, release, or handoff change the scope. Include only applicable work.
 
-## Estimate cost
+For each package, record the outcome, labor hours by role, dependencies, and the evidence behind the range. Prefer actuals from comparable work and explain the adjustment. Label judgment-based ranges as provisional. Size both ends against plausible conditions for the same scope. Price mutually exclusive scope choices separately and account for each risk once.
 
-- Use the user's rate and currency. With one rate, multiply it by each end of the effort range. With role rates, calculate the low and high labor costs per role and sum the respective endpoints. Keep currencies separate unless the user supplies a conversion basis.
-- Put known one-time and recurring third-party costs on separate lines with their billing frequency. Identify any unpriced items that could affect the total.
-- If a rate or currency is missing, provide effort and any supportable timeline. Ask for the missing inputs and leave the affected cost open.
+The breakdown is ready when every acceptance criterion maps to an included package and the upper end has a concrete explanation.
 
-## Present the estimate
+## 3. Schedule the work
 
-Lead with the scope and whatever effort, delivery, and cost ranges the inputs support. Mark the estimate as preliminary when it depends on unresolved assumptions. Follow with the work packages, milestones, pricing basis, assumptions, exclusions, and open questions that could change the estimate. If revising an estimate, show the impact of the scope change on effort, delivery, and cost.
+Place packages in dependency order using each person's effective project capacity. Roles held by the same person share one calendar. Overlap packages only when dependencies and staffing permit it. Include review work in labor hours and approval queues as elapsed time.
 
-See [worked estimate](references/worked-estimate.md) for an example of role-based pricing and a delivery schedule with parallel work.
+Build the low and high schedules separately. Identify the sequence that determines the finish, the kickoff conditions, and any external waits. If capacity is missing, give effort and ask for availability before giving a delivery window.
+
+## 4. Calculate cost
+
+Multiply the effort endpoints by the supplied rate. For different rates, total hours by role and sum the respective cost endpoints. Give the currency and separate one-time fees from recurring charges. Keep an unpriced dependency visible. If rate or currency is missing, share the supported effort and timeline, then ask for the missing pricing basis.
+
+For a **fixed-price request, budget cap, or change to an earlier estimate**, read [quoting and revisions](references/quoting-and-revisions.md).
+
+## 5. Deliver the estimate
+
+Lead with the release, effort, delivery, and cost. Follow with a breakdown, milestones, assumptions, exclusions, and the open decisions that could change the numbers. Mark conditional or provisional figures where they appear.
+
+Before sharing, reconcile the low and high sums, verify that schedules honor dependencies and available capacity, and make sure excluded work is absent from the headline totals. For an example of the calculations, read [worked estimate](references/worked-estimate.md).
