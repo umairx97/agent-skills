@@ -2,32 +2,36 @@
 
 ## Brief
 
-Add a CSV export for filtered orders to an existing admin dashboard. Admins can export the filtered list using the existing access controls. The CSV includes the fields from the approved specification, with correct escaping for commas, quotes, and line breaks. The client will use existing infrastructure and review one staging release within two working days.
+Add a CSV export for filtered orders to an existing admin dashboard. Admins can export the filtered list with the existing access controls. The CSV includes the fields in the approved specification. The export applies the correct escaping to commas, quotes, and line breaks.
 
-One developer and one designer each have six effective project hours per working day. The rates are USD 90/hour for development and USD 75/hour for design. Work starts once the client provides repository and staging access.
+The client uses the existing infrastructure. The client reviews one staging release within two working days.
+
+One developer and one designer each have six project hours per working day. The developer rate is USD 90 per hour. The designer rate is USD 75 per hour. Work starts after the client gives access to the repository and the staging environment.
 
 ## Client estimate
 
-**66–96 labor hours, 11–15 working days from kickoff, and USD 5,760–8,370 in labor.** The range assumes that the existing order filters and access controls can be reused. The upper end allows for differences between the filters used by the dashboard and the export, and for fixes found during staging validation.
+**66 to 96 labor hours, 11 to 15 working days from the start of work, and USD 5,760 to 8,370 for labor.**
+
+The estimate assumes that the release can use the existing order filters and access controls. The high value allows for differences between the dashboard filters and the export filters. It also allows for corrections after tests in the staging environment.
 
 | Work package | Role | Effort | Depends on |
 | --- | --- | ---: | --- |
-| Confirm fields, filters, and acceptance criteria | Developer | 6–12 h | Kickoff and access |
-| Design export control and feedback states | Designer | 12–18 h | Confirmed scope |
-| Implement filtered CSV export endpoint | Developer | 12–18 h | Confirmed scope |
-| Connect export UI and handle download errors | Developer | 18–24 h | Design and endpoint |
-| Test output, filters, and access on staging | Developer | 12–18 h | UI integration |
-| Deploy and hand off | Developer | 6 h | Client staging approval |
+| Confirm the fields, filters, and acceptance criteria | Developer | 6–12 h | Start of work and access |
+| Design the export control and its feedback states | Designer | 12–18 h | Confirmed scope |
+| Add the endpoint for the filtered CSV export | Developer | 12–18 h | Confirmed scope |
+| Connect the export interface. Add feedback for download errors. | Developer | 18–24 h | Design and endpoint |
+| Test the output, filters, and access in the staging environment | Developer | 12–18 h | Connected export interface |
+| Release the export. Transfer it to the client. | Developer | 6 h | Client approval of the staging release |
 | **Total** | | **66–96 h** | |
 
 ## Delivery milestones
 
-- **Scope confirmed in 1–2 working days.**
-- **Design and endpoint ready by working day 3–5.** These packages run in parallel and take 2–3 days on the available capacity.
-- **Staging ready by working day 8–12.** UI integration takes 3–4 days, followed by 2–3 days for validation and fixes.
-- **Deployment and handoff by working day 11–15.** Allow two working days for client review, then one for deployment. The review wait adds elapsed time and zero labor hours.
+- **Scope confirmation takes 1 to 2 working days.**
+- **The design and endpoint are ready by working day 3 to 5.** The packages run in parallel. Each package takes 2 to 3 days.
+- **The staging release is ready by working day 8 to 12.** Connection of the export interface takes 3 to 4 days. Tests and corrections then take 2 to 3 days.
+- **The release and handover are complete by working day 11 to 15.** The schedule allows two working days for client review and one day for the release. The wait for the review adds two days and zero labor hours.
 
-## Pricing
+## Cost
 
 | Role | Effort | Rate | Labor cost |
 | --- | ---: | ---: | ---: |
@@ -35,4 +39,4 @@ One developer and one designer each have six effective project hours per working
 | Designer | 12–18 h | USD 75/h | USD 900–1,350 |
 | **Total** | **66–96 h** | | **USD 5,760–8,370** |
 
-No new third-party fees are expected with the existing infrastructure. Scheduled exports, new permissions, and custom CSV templates are outside scope. If large exports require background processing, estimate that separately when the expected row volume is confirmed.
+The existing infrastructure has no expected new third-party fees. The scope excludes scheduled exports, new permissions, and custom CSV templates. If large exports need background processing, estimate that work separately after the user confirms the expected number of rows.
